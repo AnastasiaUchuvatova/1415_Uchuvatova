@@ -97,35 +97,42 @@ namespace Lab
 
         private void ShowForIssled_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter daForIssled = new SqlDataAdapter();
-            DataSet dsForIssled = new DataSet();
-            dgForIssled.DataSource = null;
-            //Необходимое для исследования
-            con.Open();
-            SqlCommand cmdSelectForIssled = con.CreateCommand();
-            cmdSelectForIssled.CommandText = "Nado @ID";
-            SqlCommand cmdID = con.CreateCommand();
-            cmdID.CommandText = "Select ID from [Вид исследований] where [Объект испытаний]=@obj and [Определяемая характеристика]=@har";
-            cmdID.Parameters.Add("@obj", SqlDbType.NVarChar, 50, "Объект").Value = objec.Text;
-            cmdID.Parameters.Add("@har", SqlDbType.NVarChar, 100, "Характеристика").Value = harakt.Text;
-            ID = Int32.Parse(cmdID.ExecuteScalar().ToString());
-            cmdSelectForIssled.Parameters.Add("@ID", SqlDbType.Int, 30, "ID").Value = ID;
-            daForIssled.SelectCommand = cmdSelectForIssled;
-            daForIssled.Fill(dsForIssled, "Требуется для исследования");
-            daForIssled.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            daForIssled.RowUpdated += new SqlRowUpdatedEventHandler(OnRowUpdated);
-            dgForIssled.DataSource = dsForIssled.Tables[0];
-            harakt.Text = "Характеристика";
-            objec.Text = "Объект исследования";
-
-            if (dgForIssled.RowCount == 0)
+            if (objec.Text!= "Объект исследования" && harakt.Text!= "Характеристика")
             {
-                MessageBox.Show("Нет информации в базе или для исследования ничего не требуется", "Ошибка");
+                    SqlDataAdapter daForIssled = new SqlDataAdapter();
+                    DataSet dsForIssled = new DataSet();
+                    dgForIssled.DataSource = null;
+                    //Необходимое для исследования
+                    con.Open();
+                    SqlCommand cmdSelectForIssled = con.CreateCommand();
+                    cmdSelectForIssled.CommandText = "Nado @ID";
+                    SqlCommand cmdID = con.CreateCommand();
+                    cmdID.CommandText = "Select ID from [Вид исследований] where [Объект испытаний]=@obj and [Определяемая характеристика]=@har";
+                    cmdID.Parameters.Add("@obj", SqlDbType.NVarChar, 50, "Объект").Value = objec.Text;
+                    cmdID.Parameters.Add("@har", SqlDbType.NVarChar, 100, "Характеристика").Value = harakt.Text;
+                    if (cmdID.ExecuteScalar() != null)
+                    {
+                        ID = Int32.Parse(cmdID.ExecuteScalar().ToString());
+                        cmdSelectForIssled.Parameters.Add("@ID", SqlDbType.Int, 30, "ID").Value = ID;
+                        daForIssled.SelectCommand = cmdSelectForIssled;
+                        daForIssled.Fill(dsForIssled, "Требуется для исследования");
+                        daForIssled.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                        daForIssled.RowUpdated += new SqlRowUpdatedEventHandler(OnRowUpdated);
+                        dgForIssled.DataSource = dsForIssled.Tables[0];
+                        harakt.Text = "Характеристика";
+                        objec.Text = "Объект исследования";
+                    }
+                    if (dgForIssled.RowCount == 0)
+                    {
+                        MessageBox.Show("Нет информации в базе или для исследования ничего не требуется", "Ошибка");
+                    }
+                    con.Close();
             }
-                
-
-                con.Close();
-
+            else
+            {
+                MessageBox.Show("Введены некорректные данные", "Ошибка");
+            }
+            con.Close();
         }
 
         private void NeedForIssled_Enter(object sender, EventArgs e)

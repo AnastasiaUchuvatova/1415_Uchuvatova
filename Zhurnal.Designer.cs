@@ -153,6 +153,7 @@
             this.Controls.Add(this.save);
             this.Controls.Add(this.extDate);
             this.Controls.Add(this.date);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Zhurnal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

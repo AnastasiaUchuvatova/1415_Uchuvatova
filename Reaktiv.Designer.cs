@@ -144,6 +144,7 @@
             this.Controls.Add(this.prim);
             this.Controls.Add(this.textPrim);
             this.Controls.Add(this.save);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Reaktiv";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

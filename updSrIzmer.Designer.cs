@@ -353,6 +353,7 @@
             this.Controls.Add(this.type);
             this.Controls.Add(this.textName);
             this.Controls.Add(this.name);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "updSrIzmer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

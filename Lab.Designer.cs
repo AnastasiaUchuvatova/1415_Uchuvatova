@@ -30,9 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab));
             this.mainForm = new System.Windows.Forms.TabControl();
-            this.Login = new System.Windows.Forms.TabPage();
             this.Create = new System.Windows.Forms.TabPage();
-            this.NewIssled = new System.Windows.Forms.Button();
             this.newPrekursor = new System.Windows.Forms.Button();
             this.newReaktiv = new System.Windows.Forms.Button();
             this.newPostavka = new System.Windows.Forms.Button();
@@ -60,6 +58,7 @@
             this.objec = new System.Windows.Forms.ComboBox();
             this.textForIsled = new System.Windows.Forms.Label();
             this.dgForIssled = new System.Windows.Forms.DataGridView();
+            this.NewIssled = new System.Windows.Forms.Button();
             this.mainForm.SuspendLayout();
             this.Create.SuspendLayout();
             this.update.SuspendLayout();
@@ -82,7 +81,6 @@
             // 
             // mainForm
             // 
-            this.mainForm.Controls.Add(this.Login);
             this.mainForm.Controls.Add(this.Create);
             this.mainForm.Controls.Add(this.update);
             this.mainForm.Controls.Add(this.PlanZakaza);
@@ -101,24 +99,11 @@
             this.mainForm.Size = new System.Drawing.Size(797, 425);
             this.mainForm.TabIndex = 1;
             // 
-            // Login
-            // 
-            this.Login.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Login.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Login.BackgroundImage")));
-            this.Login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Login.Location = new System.Drawing.Point(4, 46);
-            this.Login.Name = "Login";
-            this.Login.Padding = new System.Windows.Forms.Padding(3);
-            this.Login.Size = new System.Drawing.Size(789, 375);
-            this.Login.TabIndex = 0;
-            this.Login.Text = "Авторизация";
-            // 
             // Create
             // 
             this.Create.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.Create.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Create.BackgroundImage")));
             this.Create.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Create.Controls.Add(this.NewIssled);
             this.Create.Controls.Add(this.newPrekursor);
             this.Create.Controls.Add(this.newReaktiv);
             this.Create.Controls.Add(this.newPostavka);
@@ -129,17 +114,6 @@
             this.Create.Size = new System.Drawing.Size(789, 375);
             this.Create.TabIndex = 1;
             this.Create.Text = "Добавление";
-            // 
-            // NewIssled
-            // 
-            this.NewIssled.BackColor = System.Drawing.Color.LightGreen;
-            this.NewIssled.Location = new System.Drawing.Point(53, 97);
-            this.NewIssled.Name = "NewIssled";
-            this.NewIssled.Size = new System.Drawing.Size(168, 67);
-            this.NewIssled.TabIndex = 4;
-            this.NewIssled.Text = "Новая запись в журнале";
-            this.NewIssled.UseVisualStyleBackColor = false;
-            this.NewIssled.Click += new System.EventHandler(this.NewIssled_Click);
             // 
             // newPrekursor
             // 
@@ -191,10 +165,10 @@
             this.update.BackgroundImage = global::Lab.Properties.Resources.фон;
             this.update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.update.Controls.Add(this.updSrIzmer);
-            this.update.Location = new System.Drawing.Point(4, 46);
+            this.update.Location = new System.Drawing.Point(4, 25);
             this.update.Name = "update";
             this.update.Padding = new System.Windows.Forms.Padding(3);
-            this.update.Size = new System.Drawing.Size(789, 375);
+            this.update.Size = new System.Drawing.Size(789, 396);
             this.update.TabIndex = 9;
             this.update.Text = "Обновление";
             // 
@@ -304,6 +278,7 @@
             this.tabGurnal.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.tabGurnal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabGurnal.BackgroundImage")));
             this.tabGurnal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tabGurnal.Controls.Add(this.NewIssled);
             this.tabGurnal.Controls.Add(this.dgGurnal);
             this.tabGurnal.Location = new System.Drawing.Point(4, 46);
             this.tabGurnal.Name = "tabGurnal";
@@ -324,7 +299,7 @@
             this.dgGurnal.ReadOnly = true;
             this.dgGurnal.RowHeadersWidth = 51;
             this.dgGurnal.RowTemplate.Height = 24;
-            this.dgGurnal.Size = new System.Drawing.Size(759, 356);
+            this.dgGurnal.Size = new System.Drawing.Size(779, 324);
             this.dgGurnal.TabIndex = 2;
             // 
             // ProsrochChim
@@ -477,6 +452,16 @@
             this.dgForIssled.Size = new System.Drawing.Size(547, 356);
             this.dgForIssled.TabIndex = 1;
             // 
+            // NewIssled
+            // 
+            this.NewIssled.BackColor = System.Drawing.Color.LightGreen;
+            this.NewIssled.Location = new System.Drawing.Point(4, 331);
+            this.NewIssled.Name = "NewIssled";
+            this.NewIssled.Size = new System.Drawing.Size(779, 41);
+            this.NewIssled.TabIndex = 5;
+            this.NewIssled.Text = "Новая запись";
+            this.NewIssled.UseVisualStyleBackColor = false;
+            // 
             // Lab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -484,6 +469,7 @@
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(822, 450);
             this.Controls.Add(this.mainForm);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lab";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -525,7 +511,6 @@
         private System.Windows.Forms.TabPage PlanZakaza;
         private System.Windows.Forms.TabPage PlanPoverok;
         private System.Windows.Forms.TabPage Ocenka;
-        private System.Windows.Forms.Button NewIssled;
         private System.Windows.Forms.DataGridView dgProsrChim;
         private System.Windows.Forms.DataGridView dgPover;
         private System.Windows.Forms.DataGridView dgForIssled;
@@ -543,7 +528,7 @@
         private System.Windows.Forms.TabPage tabOtchet;
         private System.Windows.Forms.Button otchetIssledovaniya;
         private System.Windows.Forms.Button otchetHimikat;
-        private System.Windows.Forms.TabPage Login;
+        private System.Windows.Forms.Button NewIssled;
     }
 }
 

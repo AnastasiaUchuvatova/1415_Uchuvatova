@@ -146,6 +146,7 @@
             this.Controls.Add(this.Ostatok);
             this.Controls.Add(this.name);
             this.Controls.Add(this.Chimikat);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Postavka";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

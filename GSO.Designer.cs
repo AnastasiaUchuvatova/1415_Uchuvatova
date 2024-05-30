@@ -213,6 +213,7 @@
             this.Controls.Add(this.prim);
             this.Controls.Add(this.textPrimech);
             this.Controls.Add(this.save);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GSO";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -74,9 +74,9 @@
             // avtorizacia
             // 
             this.avtorizacia.BackColor = System.Drawing.Color.LightGreen;
-            this.avtorizacia.Location = new System.Drawing.Point(84, 145);
+            this.avtorizacia.Location = new System.Drawing.Point(84, 132);
             this.avtorizacia.Name = "avtorizacia";
-            this.avtorizacia.Size = new System.Drawing.Size(189, 23);
+            this.avtorizacia.Size = new System.Drawing.Size(189, 36);
             this.avtorizacia.TabIndex = 6;
             this.avtorizacia.Text = "Войти";
             this.avtorizacia.UseVisualStyleBackColor = false;
@@ -95,6 +95,7 @@
             this.Controls.Add(this.password);
             this.Controls.Add(this.Person);
             this.Controls.Add(this.TextName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Avtoriz";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

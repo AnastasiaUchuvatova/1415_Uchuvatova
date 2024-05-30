@@ -38,7 +38,7 @@ namespace Lab
 
         private void Person_Clik(object sender, EventArgs e)
         {
-            if (Person.Text!="")
+            try
             {
                 if (passwords[Convert.ToInt32(Person.Text.Substring(0, 3)) - 1] == password.Text)
                 {
@@ -49,6 +49,10 @@ namespace Lab
                 {
                     MessageBox.Show("Неправильный пароль", "Ошибка");
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Неправильный логин", "Ошибка");
             }
         }
     }
