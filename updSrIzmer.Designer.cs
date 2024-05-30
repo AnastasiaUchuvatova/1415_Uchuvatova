@@ -355,6 +355,7 @@
             this.Controls.Add(this.name);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "updSrIzmer";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменение информации о средстве измерения";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -155,6 +155,7 @@
             this.Controls.Add(this.date);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Zhurnal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Новая запись в журнале";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -146,6 +146,7 @@
             this.Controls.Add(this.save);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Prekursor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Новый прекурсор";
             this.ResumeLayout(false);
             this.PerformLayout();

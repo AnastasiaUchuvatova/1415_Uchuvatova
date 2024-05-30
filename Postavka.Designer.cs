@@ -148,6 +148,7 @@
             this.Controls.Add(this.Chimikat);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Postavka";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Новая поставка";
             this.ResumeLayout(false);
             this.PerformLayout();

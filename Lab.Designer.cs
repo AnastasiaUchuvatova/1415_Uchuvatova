@@ -486,6 +486,7 @@
             this.Controls.Add(this.mainForm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lab";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lab";
             this.mainForm.ResumeLayout(false);
             this.Create.ResumeLayout(false);
