@@ -16,7 +16,9 @@ namespace Lab
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Lab());
+            Application.Run(new Avtoriz());
+            if (Lab.person != 0)
+            { Application.Run(new Lab()); }
         }
     }
 }

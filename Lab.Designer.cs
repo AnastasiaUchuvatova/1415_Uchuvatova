@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab));
             this.mainForm = new System.Windows.Forms.TabControl();
             this.Login = new System.Windows.Forms.TabPage();
-            this.Person = new System.Windows.Forms.ComboBox();
-            this.TextName = new System.Windows.Forms.Label();
             this.Create = new System.Windows.Forms.TabPage();
             this.NewIssled = new System.Windows.Forms.Button();
             this.newPrekursor = new System.Windows.Forms.Button();
@@ -63,7 +61,6 @@
             this.textForIsled = new System.Windows.Forms.Label();
             this.dgForIssled = new System.Windows.Forms.DataGridView();
             this.mainForm.SuspendLayout();
-            this.Login.SuspendLayout();
             this.Create.SuspendLayout();
             this.update.SuspendLayout();
             this.PlanZakaza.SuspendLayout();
@@ -109,34 +106,12 @@
             this.Login.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.Login.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Login.BackgroundImage")));
             this.Login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Login.Controls.Add(this.Person);
-            this.Login.Controls.Add(this.TextName);
             this.Login.Location = new System.Drawing.Point(4, 46);
             this.Login.Name = "Login";
             this.Login.Padding = new System.Windows.Forms.Padding(3);
             this.Login.Size = new System.Drawing.Size(789, 375);
             this.Login.TabIndex = 0;
             this.Login.Text = "Авторизация";
-            // 
-            // Person
-            // 
-            this.Person.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.Person.ForeColor = System.Drawing.Color.Black;
-            this.Person.FormattingEnabled = true;
-            this.Person.Location = new System.Drawing.Point(24, 43);
-            this.Person.Name = "Person";
-            this.Person.Size = new System.Drawing.Size(366, 24);
-            this.Person.TabIndex = 1;
-            this.Person.Validated += new System.EventHandler(this.Person_Validated);
-            // 
-            // TextName
-            // 
-            this.TextName.AutoSize = true;
-            this.TextName.Location = new System.Drawing.Point(21, 23);
-            this.TextName.Name = "TextName";
-            this.TextName.Size = new System.Drawing.Size(168, 16);
-            this.TextName.TabIndex = 0;
-            this.TextName.Text = "Выберите пользователя";
             // 
             // Create
             // 
@@ -513,8 +488,6 @@
             this.Name = "Lab";
             this.Text = "Lab";
             this.mainForm.ResumeLayout(false);
-            this.Login.ResumeLayout(false);
-            this.Login.PerformLayout();
             this.Create.ResumeLayout(false);
             this.update.ResumeLayout(false);
             this.PlanZakaza.ResumeLayout(false);
@@ -540,10 +513,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl mainForm;
-        private System.Windows.Forms.TabPage Login;
         private System.Windows.Forms.TabPage Create;
-        private System.Windows.Forms.Label TextName;
-        private System.Windows.Forms.ComboBox Person;
         private System.Windows.Forms.Button newPrekursor;
         private System.Windows.Forms.Button newReaktiv;
         private System.Windows.Forms.Button newPostavka;
@@ -572,6 +542,7 @@
         private System.Windows.Forms.TabPage tabOtchet;
         private System.Windows.Forms.Button otchetIssledovaniya;
         private System.Windows.Forms.Button otchetHimikat;
+        private System.Windows.Forms.TabPage Login;
     }
 }
 

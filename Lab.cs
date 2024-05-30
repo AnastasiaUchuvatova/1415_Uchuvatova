@@ -14,9 +14,10 @@ namespace Lab
 {
     public partial class Lab : Form
     {
-        public Lab()
+        public Lab(/*int person*/)
         {
             InitializeComponent();
+            //this.person = person;
             //Просроченные химикаты
             SqlCommand cmdSelectProsrChim = con.CreateCommand();
             cmdSelectProsrChim.CommandText = "SELECT * FROM [просроченные химикаты]";
@@ -33,18 +34,6 @@ namespace Lab
             daPover.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             daPover.RowUpdated += new SqlRowUpdatedEventHandler(OnRowUpdated);
             dgPover.DataSource = dsPover.Tables[0];
-            con.Open();
-            SqlCommand cmdObekt = con.CreateCommand();
-            cmdObekt.CommandText = "Select * from Персонал";
-            SqlDataReader pers = cmdObekt.ExecuteReader();
-            String str;
-            while (pers.Read())
-            {
-                str = Convert.ToString(pers["ID"] + "  "+pers["ФИО"]);
-                Person.Items.Add(str);
-            }
-            pers.Close();
-            con.Close();
             //журнал
             SqlCommand cmdSelectGurnal = con.CreateCommand();
             cmdSelectGurnal.CommandText = "SELECT Журнал.ID, Персонал.ФИО, [Вид исследований].[Объект испытаний], [Вид исследований].[Определяемая характеристика]  FROM (Журнал join Персонал on Персонал.ID=Журнал.Персонал) join [Вид исследований] on [Вид исследований].ID = Журнал.Исследование";
@@ -93,8 +82,8 @@ namespace Lab
         DataSet dsPlanPoverok = new DataSet();
         SqlDataAdapter daPlanZakaza = new SqlDataAdapter();
         DataSet dsPlanZakaza = new DataSet();
-        public static int person;
         int ID;
+        public static int person;
         
         private static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)
         {
@@ -174,11 +163,6 @@ namespace Lab
             }
             har.Close();
             con.Close();
-        }
-
-        private void Person_Validated(object sender, EventArgs e)
-        {
-            person = Convert.ToInt32(Person.Text.Substring(0,3));
         }
 
         private void newPostavka_Click(object sender, EventArgs e)
@@ -325,5 +309,6 @@ namespace Lab
         {
             otchet_Data("PlanRashoda");
         }
+
     }
 }
