@@ -14,10 +14,9 @@ namespace Lab
 {
     public partial class Lab : Form
     {
-        public Lab(/*int person*/)
+        public Lab()
         {
             InitializeComponent();
-            //this.person = person;
             //Просроченные химикаты
             SqlCommand cmdSelectProsrChim = con.CreateCommand();
             cmdSelectProsrChim.CommandText = "SELECT * FROM [просроченные химикаты]";
@@ -66,6 +65,26 @@ namespace Lab
             daPlanZakaza.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             daPlanZakaza.RowUpdated += new SqlRowUpdatedEventHandler(OnRowUpdated);
             dgPlanZakaza.DataSource = dsPlanZakaza.Tables[0];
+            //настройки видимости  
+            if (person==2)
+            {               
+                mainForm.TabPages.Remove(Ocenka);
+                mainForm.TabPages.Remove(tabGurnal);
+                mainForm.TabPages.Remove(update);                
+            }
+            else if (person ==3)
+            {
+                mainForm.TabPages.Remove(Create);
+                mainForm.TabPages.Remove(ProsrochChim);
+                mainForm.TabPages.Remove(NeedPoverka);
+                mainForm.TabPages.Remove(NeedForIssled);
+                mainForm.TabPages.Remove(PlanZakaza);
+                mainForm.TabPages.Remove(PlanPoverok);
+                mainForm.TabPages.Remove(Ocenka);
+                mainForm.TabPages.Remove(update);
+                mainForm.TabPages.Remove(tabOtchet);
+            }
+            
         }
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-L97FM9K\\MSSQLSERVER19;" +
                                                      "Initial Catalog=Lab;" + "User ID=sa;" +
