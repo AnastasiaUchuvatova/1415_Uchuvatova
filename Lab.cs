@@ -82,6 +82,8 @@ namespace Lab
                 mainForm.TabPages.Remove(PlanPoverok);
                 mainForm.TabPages.Remove(Ocenka);
                 mainForm.TabPages.Remove(update);
+                otchetHimikat.Visible = false;
+                otchetIssledovaniya.Visible = false;
             }
             
         }
