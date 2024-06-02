@@ -82,7 +82,6 @@ namespace Lab
                 mainForm.TabPages.Remove(PlanPoverok);
                 mainForm.TabPages.Remove(Ocenka);
                 mainForm.TabPages.Remove(update);
-                mainForm.TabPages.Remove(tabOtchet);
             }
             
         }
