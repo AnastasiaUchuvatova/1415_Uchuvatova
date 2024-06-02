@@ -41,10 +41,9 @@
             this.dgPlanZakaza = new System.Windows.Forms.DataGridView();
             this.PlanPoverok = new System.Windows.Forms.TabPage();
             this.dgPlanPoverok = new System.Windows.Forms.DataGridView();
-            this.tabOtchet = new System.Windows.Forms.TabPage();
-            this.otchetHimikat = new System.Windows.Forms.Button();
-            this.otchetIssledovaniya = new System.Windows.Forms.Button();
             this.tabGurnal = new System.Windows.Forms.TabPage();
+            this.otchetIssledovaniya = new System.Windows.Forms.Button();
+            this.NewIssled = new System.Windows.Forms.Button();
             this.dgGurnal = new System.Windows.Forms.DataGridView();
             this.ProsrochChim = new System.Windows.Forms.TabPage();
             this.dgProsrChim = new System.Windows.Forms.DataGridView();
@@ -58,7 +57,7 @@
             this.objec = new System.Windows.Forms.ComboBox();
             this.textForIsled = new System.Windows.Forms.Label();
             this.dgForIssled = new System.Windows.Forms.DataGridView();
-            this.NewIssled = new System.Windows.Forms.Button();
+            this.otchetHimikat = new System.Windows.Forms.Button();
             this.mainForm.SuspendLayout();
             this.Create.SuspendLayout();
             this.update.SuspendLayout();
@@ -66,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgPlanZakaza)).BeginInit();
             this.PlanPoverok.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPlanPoverok)).BeginInit();
-            this.tabOtchet.SuspendLayout();
             this.tabGurnal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgGurnal)).BeginInit();
             this.ProsrochChim.SuspendLayout();
@@ -85,7 +83,6 @@
             this.mainForm.Controls.Add(this.update);
             this.mainForm.Controls.Add(this.PlanZakaza);
             this.mainForm.Controls.Add(this.PlanPoverok);
-            this.mainForm.Controls.Add(this.tabOtchet);
             this.mainForm.Controls.Add(this.tabGurnal);
             this.mainForm.Controls.Add(this.ProsrochChim);
             this.mainForm.Controls.Add(this.NeedPoverka);
@@ -165,10 +162,10 @@
             this.update.BackgroundImage = global::Lab.Properties.Resources.фон;
             this.update.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.update.Controls.Add(this.updSrIzmer);
-            this.update.Location = new System.Drawing.Point(4, 25);
+            this.update.Location = new System.Drawing.Point(4, 46);
             this.update.Name = "update";
             this.update.Padding = new System.Windows.Forms.Padding(3);
-            this.update.Size = new System.Drawing.Size(789, 396);
+            this.update.Size = new System.Drawing.Size(789, 375);
             this.update.TabIndex = 9;
             this.update.Text = "Обновление";
             // 
@@ -237,47 +234,12 @@
             this.dgPlanPoverok.Size = new System.Drawing.Size(759, 356);
             this.dgPlanPoverok.TabIndex = 1;
             // 
-            // tabOtchet
-            // 
-            this.tabOtchet.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.tabOtchet.BackgroundImage = global::Lab.Properties.Resources.фон;
-            this.tabOtchet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.tabOtchet.Controls.Add(this.otchetHimikat);
-            this.tabOtchet.Controls.Add(this.otchetIssledovaniya);
-            this.tabOtchet.Location = new System.Drawing.Point(4, 46);
-            this.tabOtchet.Name = "tabOtchet";
-            this.tabOtchet.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOtchet.Size = new System.Drawing.Size(789, 375);
-            this.tabOtchet.TabIndex = 10;
-            this.tabOtchet.Text = "Отчеты";
-            // 
-            // otchetHimikat
-            // 
-            this.otchetHimikat.BackColor = System.Drawing.Color.LightGreen;
-            this.otchetHimikat.Location = new System.Drawing.Point(28, 86);
-            this.otchetHimikat.Name = "otchetHimikat";
-            this.otchetHimikat.Size = new System.Drawing.Size(200, 45);
-            this.otchetHimikat.TabIndex = 4;
-            this.otchetHimikat.Text = "Сформировать отчет об использовании химикатов за год";
-            this.otchetHimikat.UseVisualStyleBackColor = false;
-            this.otchetHimikat.Click += new System.EventHandler(this.otchetHimikat_Click);
-            // 
-            // otchetIssledovaniya
-            // 
-            this.otchetIssledovaniya.BackColor = System.Drawing.Color.LightGreen;
-            this.otchetIssledovaniya.Location = new System.Drawing.Point(28, 26);
-            this.otchetIssledovaniya.Name = "otchetIssledovaniya";
-            this.otchetIssledovaniya.Size = new System.Drawing.Size(200, 45);
-            this.otchetIssledovaniya.TabIndex = 3;
-            this.otchetIssledovaniya.Text = "Сформировать отчет об исследованиях за год";
-            this.otchetIssledovaniya.UseVisualStyleBackColor = false;
-            this.otchetIssledovaniya.Click += new System.EventHandler(this.otchetIssledovaniya_Click);
-            // 
             // tabGurnal
             // 
             this.tabGurnal.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.tabGurnal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabGurnal.BackgroundImage")));
             this.tabGurnal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tabGurnal.Controls.Add(this.otchetIssledovaniya);
             this.tabGurnal.Controls.Add(this.NewIssled);
             this.tabGurnal.Controls.Add(this.dgGurnal);
             this.tabGurnal.Location = new System.Drawing.Point(4, 46);
@@ -286,6 +248,26 @@
             this.tabGurnal.Size = new System.Drawing.Size(789, 375);
             this.tabGurnal.TabIndex = 8;
             this.tabGurnal.Text = "Журнал";
+            // 
+            // otchetIssledovaniya
+            // 
+            this.otchetIssledovaniya.BackColor = System.Drawing.Color.LightGreen;
+            this.otchetIssledovaniya.Location = new System.Drawing.Point(388, 331);
+            this.otchetIssledovaniya.Name = "otchetIssledovaniya";
+            this.otchetIssledovaniya.Size = new System.Drawing.Size(395, 45);
+            this.otchetIssledovaniya.TabIndex = 6;
+            this.otchetIssledovaniya.Text = "Сформировать отчет об исследованиях за год";
+            this.otchetIssledovaniya.UseVisualStyleBackColor = false;
+            // 
+            // NewIssled
+            // 
+            this.NewIssled.BackColor = System.Drawing.Color.LightGreen;
+            this.NewIssled.Location = new System.Drawing.Point(4, 331);
+            this.NewIssled.Name = "NewIssled";
+            this.NewIssled.Size = new System.Drawing.Size(387, 48);
+            this.NewIssled.TabIndex = 5;
+            this.NewIssled.Text = "Новая запись";
+            this.NewIssled.UseVisualStyleBackColor = false;
             // 
             // dgGurnal
             // 
@@ -357,6 +339,7 @@
             this.Ocenka.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.Ocenka.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Ocenka.BackgroundImage")));
             this.Ocenka.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Ocenka.Controls.Add(this.otchetHimikat);
             this.Ocenka.Controls.Add(this.dgZaGod);
             this.Ocenka.Location = new System.Drawing.Point(4, 46);
             this.Ocenka.Name = "Ocenka";
@@ -376,7 +359,7 @@
             this.dgZaGod.ReadOnly = true;
             this.dgZaGod.RowHeadersWidth = 51;
             this.dgZaGod.RowTemplate.Height = 24;
-            this.dgZaGod.Size = new System.Drawing.Size(759, 356);
+            this.dgZaGod.Size = new System.Drawing.Size(785, 330);
             this.dgZaGod.TabIndex = 1;
             // 
             // NeedForIssled
@@ -452,15 +435,15 @@
             this.dgForIssled.Size = new System.Drawing.Size(547, 356);
             this.dgForIssled.TabIndex = 1;
             // 
-            // NewIssled
+            // otchetHimikat
             // 
-            this.NewIssled.BackColor = System.Drawing.Color.LightGreen;
-            this.NewIssled.Location = new System.Drawing.Point(4, 331);
-            this.NewIssled.Name = "NewIssled";
-            this.NewIssled.Size = new System.Drawing.Size(779, 41);
-            this.NewIssled.TabIndex = 5;
-            this.NewIssled.Text = "Новая запись";
-            this.NewIssled.UseVisualStyleBackColor = false;
+            this.otchetHimikat.BackColor = System.Drawing.Color.LightGreen;
+            this.otchetHimikat.Location = new System.Drawing.Point(3, 334);
+            this.otchetHimikat.Name = "otchetHimikat";
+            this.otchetHimikat.Size = new System.Drawing.Size(786, 38);
+            this.otchetHimikat.TabIndex = 5;
+            this.otchetHimikat.Text = "Сформировать отчет об использовании химикатов за год";
+            this.otchetHimikat.UseVisualStyleBackColor = false;
             // 
             // Lab
             // 
@@ -481,7 +464,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgPlanZakaza)).EndInit();
             this.PlanPoverok.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgPlanPoverok)).EndInit();
-            this.tabOtchet.ResumeLayout(false);
             this.tabGurnal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgGurnal)).EndInit();
             this.ProsrochChim.ResumeLayout(false);
@@ -525,10 +507,9 @@
         private System.Windows.Forms.DataGridView dgGurnal;
         private System.Windows.Forms.TabPage update;
         private System.Windows.Forms.Button updSrIzmer;
-        private System.Windows.Forms.TabPage tabOtchet;
+        private System.Windows.Forms.Button NewIssled;
         private System.Windows.Forms.Button otchetIssledovaniya;
         private System.Windows.Forms.Button otchetHimikat;
-        private System.Windows.Forms.Button NewIssled;
     }
 }
 
